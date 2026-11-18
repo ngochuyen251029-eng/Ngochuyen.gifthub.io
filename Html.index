@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngọc Huyền - Trang Giới Thiệu Bản Thân</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tải Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tải Font Awesome cho các biểu tượng -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        pastel: {
+                            rose: '#FDF2F4',
+                            pink: '#FCE7EB',
+                            blush: '#F8BBD0',
+                            coral: '#E87A90',
+                            deep: '#B84A62',
+                            cream: '#FAF8F5',
+                            sage: '#EBF3EE',
+                            lavender: '#F3EFFE'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-pastel-cream text-slate-700 font-sans antialiased selection:bg-pastel-coral selection:text-white overflow-x-hidden">
+
+    <!-- Thanh điều hướng (Navbar) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-pink-100/80 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2 group">
+                    <span class="w-9 h-9 rounded-full bg-gradient-to-tr from-pastel-coral to-pink-400 text-white flex items-center justify-center font-serif font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+                        NH
+                    </span>
+                    <span class="font-serif font-bold text-xl text-slate-800 tracking-wide">Ngọc Huyền</span>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#gioi-thieu" class="text-sm font-medium text-slate-600 hover:text-pastel-coral transition-colors">Giới thiệu</a>
+                    <a href="#so-thich" class="text-sm font-medium text-slate-600 hover:text-pastel-coral transition-colors">Sở thích</a>
+                    <a href="#ky-nang" class="text-sm font-medium text-slate-600 hover:text-pastel-coral transition-colors">Kỹ năng</a>
+                    <a href="#lien-he" class="text-sm font-medium text-slate-600 hover:text-pastel-coral transition-colors">Liên hệ</a>
+                </nav>
+
+                <!-- Nút CTA Desktop -->
+                <div class="hidden md:block">
+                    <a href="#lien-he" class="px-5 py-2.5 rounded-full bg-pastel-coral hover:bg-pastel-deep text-white text-sm font-medium shadow-md shadow-pink-200 transition-all duration-300 hover:-translate-y-0.5">
+                        Kết nối ngay
+                    </a>
+                </div>
+
+                <!-- Nút Menu Mobile -->
+                <button id="mobile-menu-btn" aria-label="Mở menu" class="md:hidden p-2.5 rounded-xl text-slate-600 hover:bg-pastel-rose focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-pink-100 px-4 pt-2 pb-6 space-y-2 shadow-lg">
+            <a href="#gioi-thieu" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-pastel-rose hover:text-pastel-coral">Giới thiệu</a>
+            <a href="#so-thich" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-pastel-rose hover:text-pastel-coral">Sở thích</a>
+            <a href="#ky-nang" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-pastel-rose hover:text-pastel-coral">Kỹ năng</a>
+            <a href="#lien-he" class="block px-4 py-3 rounded-xl text-base font-medium text-pastel-coral bg-pastel-rose/50">Liên hệ với mình</a>
+        </div>
+    </header>
+
+    <!-- Phần Mở Đầu (Hero Section) -->
+    <section class="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden bg-gradient-to-b from-pastel-rose via-pastel-cream to-pastel-cream">
+        <!-- Các hình khối trang trí nền mờ -->
+        <div class="absolute top-20 left-10 w-64 h-64 bg-pink-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float"></div>
+        <div class="absolute bottom-10 right-10 w-72 h-72 bg-purple-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
+                
+                <!-- Nội dung chào mừng -->
+                <div class="w-full lg:w-3/5 text-center lg:text-left space-y-6 animate-fade-in-up">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white shadow-sm border border-pink-100 text-pastel-coral text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-pastel-coral animate-ping"></span>
+                        <span>Chào mừng đến với góc nhỏ của mình</span>
+                    </div>
+
+                    <!-- Tiêu đề chính nổi bật theo yêu cầu -->
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 leading-tight tracking-tight">
+                        XIN CHÀO MỌI NGƯỜI<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-pastel-coral via-pink-500 to-purple-500">
+                            MÌNH TÊN LÀ NGỌC HUYỀN
+                        </span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Một cô gái yêu thích sự sáng tạo, cái đẹp và những điều tích cực trong cuộc sống. Rất vui được làm quen, chia sẻ câu chuyện và kết nối cùng tất cả mọi người!
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#gioi-thieu" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-pastel-coral to-pink-500 text-white font-semibold shadow-lg shadow-pink-200 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-center">
+                            Khám phá về mình <i class="fas fa-arrow-down ml-2 text-sm"></i>
+                        </a>
+                        <a href="#lien-he" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-slate-700 font-semibold border border-pink-200 hover:bg-pastel-rose hover:border-pastel-coral transition-all duration-300 text-center">
+                            Gửi lời chào
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hình ảnh đại diện (Avatar) -->
+                <div class="w-full lg:w-2/5 flex justify-center">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80">
+                        <!-- Khung viền trang trí xoay nhẹ -->
+                        <div class="absolute inset-0 rounded-[2.5rem] bg-gradient-to-tr from-pastel-coral to-purple-300 rotate-6 opacity-30 scale-105 transition-transform duration-500 hover:rotate-12"></div>
+                        <div class="relative w-full h-full rounded-[2.5rem] overflow-hidden border-4 border-white shadow-xl bg-pastel-pink">
+                            <img 
+                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" 
+                                alt="Chân dung Ngọc Huyền" 
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x600/FCE7EB/E87A90?text=Ngoc+Huyen';"
+                                class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
+                            >
+                        </div>
+                        <!-- Huy hiệu nổi -->
+                        <div class="absolute -bottom-4 -left-4 bg-white px-4 py-2.5 rounded-2xl shadow-lg border border-pink-50 flex items-center space-x-2.5 animate-float">
+                            <span class="text-2xl">🌸</span>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Năng lượng</p>
+                                <p class="text-sm font-bold text-slate-700">Tích cực & Sáng tạo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Giới Thiệu Ngắn Gọn -->
+    <section id="gioi-thieu" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <span class="text-pastel-coral font-semibold text-sm tracking-wider uppercase">Đôi nét về bản thân</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-800 mt-2">Câu Chuyện Của Huyền</h2>
+                <div class="w-16 h-1 bg-pastel-coral mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="bg-pastel-cream rounded-3xl p-6 sm:p-10 lg:p-12 border border-pink-100/80 shadow-sm reveal">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-7 space-y-4 text-slate-600 leading-relaxed text-base sm:text-lg">
+                        <p>
+                            Xin chào! Mình là <strong class="text-slate-800 font-semibold">Ngọc Huyền</strong>. Mình luôn tin rằng mỗi ngày trôi qua đều là một cơ hội tuyệt vời để học hỏi những điều mới mẻ và lan tỏa niềm vui đến mọi người xung quanh.
+                        </p>
+                        <p>
+                            Trong công việc cũng như cuộc sống, mình là người tỉ mỉ, cởi mở và luôn đặt trọn tâm huyết vào những gì mình làm. Mình yêu thích việc kết hợp giữa tư duy logic và sự bay bổng của nghệ thuật để tạo nên những giá trị tinh tế.
+                        </p>
+                        <blockquote class="border-l-4 border-pastel-coral pl-4 italic text-slate-700 font-serif text-lg my-4 bg-white/60 py-2 pr-3 rounded-r-xl">
+                            "Hãy luôn hướng về phía mặt trời, bóng tối sẽ ngả về phía sau bạn."
+                        </blockquote>
+                    </div>
+
+                    <!-- Thông tin nhanh -->
+                    <div class="md:col-span-5 bg-white rounded-2xl p-6 shadow-sm border border-pink-50 space-y-4">
+                        <h3 class="font-bold text-slate-800 text-lg border-b border-slate-100 pb-3">Thông tin cơ bản</h3>
+                        <ul class="space-y-3 text-sm sm:text-base">
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fas fa-user text-pastel-coral w-6"></i> Họ tên:</span>
+                                <span class="font-semibold text-slate-700">Ngọc Huyền</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fas fa-map-marker-alt text-pastel-coral w-6"></i> Nơi sống:</span>
+                                <span class="font-semibold text-slate-700">Việt Nam</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fas fa-heart text-pastel-coral w-6"></i> Tính cách:</span>
+                                <span class="font-semibold text-slate-700">Hòa đồng, Tinh tế</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fas fa-sparkles text-pastel-coral w-6"></i> Châm ngôn:</span>
+                                <span class="font-semibold text-slate-700">Sống trọn từng khoảnh khắc</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Sở Thích -->
+    <section id="so-thich" class="py-16 sm:py-24 bg-pastel-cream">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <span class="text-pastel-coral font-semibold text-sm tracking-wider uppercase">Niềm vui mỗi ngày</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-800 mt-2">Sở Thích Cá Nhân</h2>
+                <p class="text-slate-500 mt-3">Những điều nhỏ bé giúp mình cân bằng cuộc sống và nạp lại năng lượng.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Sở thích 1 -->
+                <div class="bg-white rounded-3xl p-7 border border-pink-100/60 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-pastel-rose text-pastel-coral flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Chụp Ảnh</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Lưu giữ những khoảnh khắc đời thường, ánh nắng chiều và những góc phố bình yên qua ống kính.
+                    </p>
+                </div>
+
+                <!-- Sở thích 2 -->
+                <div class="bg-white rounded-3xl p-7 border border-pink-100/60 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-pastel-sage text-emerald-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Đọc Sách</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Thưởng thức một tách trà ấm cùng những cuốn sách về tâm lý học, tản văn và phát triển bản thân.
+                    </p>
+                </div>
+
+                <!-- Sở thích 3 -->
+                <div class="bg-white rounded-3xl p-7 border border-pink-100/60 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-pastel-lavender text-purple-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Âm Nhạc</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Lắng nghe những giai điệu Acoustic nhẹ nhàng, Lofi thư giãn giúp khơi nguồn cảm hứng sáng tạo.
+                    </p>
+                </div>
+
+                <!-- Sở thích 4 -->
+                <div class="bg-white rounded-3xl p-7 border border-pink-100/60 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group reveal" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Du Lịch</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Khám phá những vùng đất mới, trải nghiệm văn hóa địa phương và thưởng thức ẩm thực đặc sắc.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Kỹ Năng -->
+    <section id="ky-nang" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <span class="text-pastel-coral font-semibold text-sm tracking-wider uppercase">Năng lực & Điểm mạnh</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-800 mt-2">Kỹ Năng Của Mình</h2>
+                <p class="text-slate-500 mt-3">Không ngừng trau dồi và hoàn thiện bản thân mỗi ngày.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Cột Kỹ năng chuyên môn / sáng tạo -->
+                <div class="bg-pastel-cream rounded-3xl p-8 border border-pink-100/80 space-y-6 reveal">
+                    <div class="flex items-center space-x-3 mb-2">
+                        <span class="w-10 h-10 rounded-xl bg-pastel-coral text-white flex items-center justify-center">
+                            <i class="fas fa-palette"></i>
+                        </span>
+                        <h3 class="text-xl font-bold text-slate-800">Sáng Tạo & Công Nghệ</h3>
+                    </div>
+
+                    <!-- Thanh tiến trình 1 -->
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-2">
+                            <span class="text-slate-700">Sáng tạo nội dung (Content Creation)</span>
+                            <span class="text-pastel-coral">90%</span>
+                        </div>
+                        <div class="w-full bg-pink-100 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-gradient-to-r from-pastel-coral to-pink-400 h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Thanh tiến trình 2 -->
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-2">
+                            <span class="text-slate-700">Thiết kế & Thẩm mỹ hình ảnh</span>
+                            <span class="text-pastel-coral">85%</span>
+                        </div>
+                        <div class="w-full bg-pink-100 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-gradient-to-r from-pastel-coral to-pink-400 h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Thanh tiến trình 3 -->
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-2">
+                            <span class="text-slate-700">Tin học văn phòng & Công cụ số</span>
+                            <span class="text-pastel-coral">88%</span>
+                        </div>
+                        <div class="w-full bg-pink-100 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-gradient-to-r from-pastel-coral to-pink-400 h-2.5 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cột Kỹ năng mềm -->
+                <div class="bg-pastel-cream rounded-3xl p-8 border border-pink-100/80 space-y-6 reveal" style="transition-delay: 150ms;">
+                    <div class="flex items-center space-x-3 mb-2">
+                        <span class="w-10 h-10 rounded-xl bg-purple-400 text-white flex items-center justify-center">
+                            <i class="fas fa-comments"></i>
+                        </span>
+                        <h3 class="text-xl font-bold text-slate-800">Kỹ Năng Mềm</h3>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 pt-1">
+                        <div class="bg-white p-4 rounded-2xl border border-pink-50 shadow-sm flex flex-col items-center text-center">
+                            <i class="fas fa-users text-pastel-coral text-xl mb-2"></i>
+                            <span class="font-semibold text-slate-700 text-sm">Giao tiếp & Lắng nghe</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-pink-50 shadow-sm flex flex-col items-center text-center">
+                            <i class="fas fa-hands-helping text-purple-400 text-xl mb-2"></i>
+                            <span class="font-semibold text-slate-700 text-sm">Làm việc nhóm</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-pink-50 shadow-sm flex flex-col items-center text-center">
+                            <i class="fas fa-clock text-emerald-500 text-xl mb-2"></i>
+                            <span class="font-semibold text-slate-700 text-sm">Quản lý thời gian</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-pink-50 shadow-sm flex flex-col items-center text-center">
+                            <i class="fas fa-lightbulb text-amber-400 text-xl mb-2"></i>
+                            <span class="font-semibold text-slate-700 text-sm">Giải quyết vấn đề</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Liên Hệ -->
+    <section id="lien-he" class="py-16 sm:py-24 bg-gradient-to-b from-pastel-cream to-pastel-rose">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-[2.5rem] p-8 sm:p-12 shadow-xl shadow-pink-100/60 border border-pink-100 reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    
+                    <!-- Thông tin liên hệ trực tiếp -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <span class="text-pastel-coral font-semibold text-sm uppercase tracking-wider">Kết nối</span>
+                            <h2 class="text-3xl font-serif font-bold text-slate-800 mt-1">Liên Hệ Với Huyền</h2>
+                            <p class="text-slate-500 text-sm mt-3 leading-relaxed">
+                                Đừng ngần ngại gửi tin nhắn cho mình nếu bạn muốn trò chuyện, hợp tác hoặc đơn giản là gửi một lời chào nhé!
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Email với nút sao chép -->
+                            <div class="flex items-center justify-between p-3.5 rounded-2xl bg-pastel-cream border border-pink-100">
+                                <div class="flex items-center space-x-3 overflow-hidden">
+                                    <div class="w-10 h-10 rounded-xl bg-white text-pastel-coral flex items-center justify-center shrink-0 shadow-sm">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="truncate">
+                                        <p class="text-xs text-slate-400">Email</p>
+                                        <p id="email-text" class="text-sm font-semibold text-slate-700 truncate">ngochuyen.hello@gmail.com</p>
+                                    </div>
+                                </div>
+                                <button onclick="copyEmail()" title="Sao chép email" class="p-2 text-slate-400 hover:text-pastel-coral transition-colors shrink-0">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+
+                            <!-- Mạng xã hội -->
+                            <div class="pt-2">
+                                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Mạng xã hội</p>
+                                <div class="flex space-x-3">
+                                    <a href="#lien-he" onclick="showToast('Đang mở trang Facebook của Ngọc Huyền!')" aria-label="Facebook" class="w-11 h-11 rounded-full bg-pastel-rose text-pastel-coral hover:bg-pastel-coral hover:text-white flex items-center justify-center transition-all duration-300">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#lien-he" onclick="showToast('Đang mở trang Instagram của Ngọc Huyền!')" aria-label="Instagram" class="w-11 h-11 rounded-full bg-pastel-rose text-pastel-coral hover:bg-pastel-coral hover:text-white flex items-center justify-center transition-all duration-300">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#lien-he" onclick="showToast('Đang mở kênh TikTok của Ngọc Huyền!')" aria-label="TikTok" class="w-11 h-11 rounded-full bg-pastel-rose text-pastel-coral hover:bg-pastel-coral hover:text-white flex items-center justify-center transition-all duration-300">
+                                        <i class="fab fa-tiktok"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form gửi tin nhắn -->
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="sender-name" class="block text-sm font-medium text-slate-700 mb-1.5">Tên của bạn</label>
+                                    <input type="text" id="sender-name" required placeholder="Nhập tên của bạn..." class="w-full px-4 py-3 rounded-xl bg-pastel-cream border border-pink-100 focus:border-pastel-coral focus:bg-white focus:outline-none transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label for="sender-email" class="block text-sm font-medium text-slate-700 mb-1.5">Email của bạn</label>
+                                    <input type="email" id="sender-email" required placeholder="email@example.com" class="w-full px-4 py-3 rounded-xl bg-pastel-cream border border-pink-100 focus:border-pastel-coral focus:bg-white focus:outline-none transition-colors text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="sender-message" class="block text-sm font-medium text-slate-700 mb-1.5">Lời nhắn gửi Huyền</label>
+                                <textarea id="sender-message" rows="4" required placeholder="Xin chào Ngọc Huyền, mình muốn làm quen..." class="w-full px-4 py-3 rounded-xl bg-pastel-cream border border-pink-100 focus:border-pastel-coral focus:bg-white focus:outline-none transition-colors text-sm resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-pastel-coral to-pink-500 text-white font-semibold shadow-md shadow-pink-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center space-x-2">
+                                <span>Gửi lời nhắn</span>
+                                <i class="fas fa-paper-plane text-sm"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chân trang (Footer) -->
+    <footer class="bg-white border-t border-pink-100 py-8 text-center">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-serif font-bold text-lg text-slate-800 mb-1">Ngọc Huyền</p>
+            <p class="text-slate-400 text-sm">
+                Được thiết kế với tất cả sự chân thành &bull; &copy; 2026 Ngọc Huyền.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Hộp thông báo nổi (Toast Notification) thay thế cho alert() -->
+    <div id="toast-box" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-slate-800 text-white px-5 py-3.5 rounded-2xl shadow-xl flex items-center space-x-3 border border-slate-700">
+            <span class="w-6 h-6 rounded-full bg-pastel-coral text-white flex items-center justify-center text-xs">
+                <i class="fas fa-check"></i>
+            </span>
+            <p id="toast-message" class="text-sm font-medium">Thông báo</p>
+        </div>
+    </div>
+
+    <!-- JavaScript xử lý tương tác và hiệu ứng -->
+    <script>
+        // 1. Xử lý bật/tắt Menu trên thiết bị di động
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tự động đóng menu mobile khi bấm vào liên kết
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Hàm hiển thị thông báo Toast mượt mà
+        let toastTimeout;
+        function showToast(message) {
+            const toastBox = document.getElementById('toast-box');
+            const toastMessage = document.getElementById('toast-message');
+            
+            toastMessage.textContent = message;
+            toastBox.classList.remove('translate-y-24', 'opacity-0');
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toastBox.classList.add('translate-y-24', 'opacity-0');
+            }, 3500);
+        }
+
+        // 3. Sao chép địa chỉ Email vào bộ nhớ tạm
+        function copyEmail() {
+            const emailText = document.getElementById('email-text').innerText;
+            const tempInput = document.createElement('input');
+            tempInput.value = emailText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                showToast('Đã sao chép email: ' + emailText);
+            } catch (err) {
+                showToast('Không thể sao chép tự động, vui lòng thử lại.');
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        // 4. Xử lý gửi Form liên hệ
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('sender-name').value.trim();
+            showToast(`Cảm ơn ${name}! Lời nhắn của bạn đã được gửi tới Ngọc Huyền.`);
+            this.reset();
+        });
+
+        // 5. Hiệu ứng xuất hiện mượt mà khi cuộn trang (Scroll Reveal)
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            // Thiết lập trạng thái ban đầu
+            reveals.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(24px)';
+                el.style.transition = 'all 0.7s cubic-bezier(0.22, 1, 0.36, 1)';
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            reveals.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
